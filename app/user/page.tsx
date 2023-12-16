@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import Card from "../Component/Card/User";
 import Head from "next/head";
 
@@ -7,7 +7,8 @@ const User = async () => {
   return (
     <>
       <Head>
-        <title>List user.</title>
+        <title>My page title</title>
+        <meta property="og:title" content="My page title" key="title" />
       </Head>
       <div>
         <div className="my-4">
@@ -32,7 +33,7 @@ const User = async () => {
 
 const getStaticProps = async () => {
   const resp = await fetch("https://jsonplaceholder.typicode.com/users", {
-    cache: "no-cache",
+    cache: "no-store",
   });
   const format = await resp.json();
   return format;
