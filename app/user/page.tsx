@@ -1,15 +1,14 @@
 import React from "react";
 import Card from "../Component/Card/User";
-import Head from "next/head";
+
+export const metadata = {
+  title: "list user",
+};
 
 const User = async () => {
   const data: any[] = await getStaticProps();
   return (
     <>
-      <Head>
-        <title>My page title</title>
-        <meta property="og:title" content="My page title" key="title" />
-      </Head>
       <div>
         <div className="my-4">
           <h1 className="text-2xl font-bold">List user.</h1>
